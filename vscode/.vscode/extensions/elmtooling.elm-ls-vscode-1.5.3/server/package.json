@@ -1,0 +1,76 @@
+{
+  "name": "@elm-tooling/elm-language-server",
+  "description": "Implementation of an elm language server in node.",
+  "version": "1.13.2",
+  "author": "Kolja Lampe",
+  "license": "MIT",
+  "files": [
+    "out"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elm-tooling/elm-language-server"
+  },
+  "dependencies": {
+    "elm-analyse": "github:elm-tooling/elm-analyse#7f4000cce5ef024fe5e82c7ee1725feef95a9daf",
+    "escape-string-regexp": "^4.0.0",
+    "execa": "^4.1.0",
+    "fast-diff": "^1.2.0",
+    "globby": "^11.0.1",
+    "pjson": "1.0.9",
+    "reflect-metadata": "^0.1.13",
+    "ts-debounce": "^2.0.1",
+    "tsyringe": "^4.3.0",
+    "vscode-languageserver": "^6.1.1",
+    "vscode-languageserver-textdocument": "1.0.1",
+    "vscode-uri": "^2.1.2",
+    "web-tree-sitter": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "14.14.6",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "copyfiles": "^2.4.0",
+    "doctoc": "^1.4.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "jest-mock-extended": "^1.0.10",
+    "prettier": "^2.1.2",
+    "tree-sitter-cli": "^0.17.3",
+    "tree-sitter-elm": "^4.3.1",
+    "ts-jest": "^26.4.3",
+    "typescript": "4.0.5"
+  },
+  "scripts": {
+    "version-patch": "npm --no-git-tag-version version patch",
+    "version-minor": "npm --no-git-tag-version version minor",
+    "version-major": "npm --no-git-tag-version version major",
+    "version": "npm i && npm run compile",
+    "copy-wasm": "copyfiles ./tree-sitter-elm.wasm out",
+    "compile": "npm run copy-wasm && tsc -p ./",
+    "watch": "npm run copy-wasm && tsc -watch -p ./",
+    "lint": "eslint -c .eslintrc.js --ext .ts src",
+    "build-tree-sitter": "tree-sitter build-wasm ./node_modules/tree-sitter-elm",
+    "test": "jest --coverage",
+    "generate-toc": "doctoc README.md"
+  },
+  "bin": {
+    "elm-language-server": "./out/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "elm",
+    "elm-lang",
+    "language server",
+    "language-server",
+    "lsp"
+  ]
+}

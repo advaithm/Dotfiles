@@ -1,0 +1,33 @@
+{
+  "name": "elm-language-client-vscode",
+  "description": "VSCode client for Elm",
+  "author": "Kolja Lampe",
+  "publisher": "elmTooling",
+  "license": "MIT",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elmtooling/elm-language-client-vscode"
+  },
+  "engines": {
+    "vscode": "^1.42.0"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint -c .eslintrc.js --ext .ts src"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^6.1.3"
+  },
+  "devDependencies": {
+    "@types/request": "^2.48.5",
+    "@types/vscode": "^1.50.0",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint": "^7.12.1",
+    "typescript": "4.0.5",
+    "vscode-test": "^1.4.1"
+  }
+}
