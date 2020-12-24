@@ -1,0 +1,3 @@
+[submodule "vim/.vim/pack/packager/start/material.vim"]
+	path = vim/.vim/pack/packager/start/material.vim
+	url = https://github.com/kaicataldo/material.vim
