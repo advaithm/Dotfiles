@@ -9,21 +9,33 @@ function! s:packager_init(packager) abort
   call a:packager.add('kaicataldo/material.vim', { 'branch': 'main' })
   " linter
   call a:packager.add('vim-syntastic/syntastic')
+  " nerd tree file explorer
+  call a:packager.add('preservim/nerdtree')
+  " black formater
+  call a:packager.add('psf/black', { 'branch': 'stable','type':'opt' })
 endfunction
 
 packadd vim-packager
 call packager#setup(function('s:packager_init'))
-
+packadd nerdtree
 " settings
 set number
 set foldmethod=manual
 set tabstop=4
+set foldenable
+
 if has('termguicolors')
   set termguicolors
 endif
+" Load plugins only for specific filetype
+augroup packager_filetype
+  autocmd!
+  " load black for python files
+  autocmd FileType python packadd black
+augroup END
 
 syntax on
-" syntastic
+" syntastic stuff
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -38,4 +50,5 @@ let g:material_theme_style = 'darker'
 let g:material_terminal_italics = 1
 colorscheme material 
 
-
+"start nerd tree drop cursor in other window
+autocmd VimEnter * NERDTree | wincmd p
