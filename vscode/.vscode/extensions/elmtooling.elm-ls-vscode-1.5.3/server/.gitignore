@@ -1,6 +1,0 @@
-out
-node_modules
-.vscode-test
-tsconfig.tsbuildinfo
-coverage
-elm-stuff
