@@ -20,9 +20,9 @@ call packager#setup(function('s:packager_init'))
 packadd nerdtree
 " settings
 set number
-set foldmethod=manual
 set tabstop=4
 set foldenable
+set foldmethod=indent
 
 if has('termguicolors')
   set termguicolors
