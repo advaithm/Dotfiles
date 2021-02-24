@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 alias cls="clear"
 export PATH=$PATH:/home/nullrequest/.cargo/bin/
 alias kate='kstart5 kate'
+alias code="codium"
 stfu () {
 	"$@" &> /dev/null < /dev/null
 }
