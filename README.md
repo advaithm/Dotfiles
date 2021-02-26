@@ -6,7 +6,7 @@ vim
 neovim
 zsh
 neofetch
-vscode
+vscodium
 ```
 you can use only one or two depending on what you like. This repo is intended to be used with [gnu stow](https://www.gnu.org/software/stow/) a nifty program that symlinks these files to the appropriate locations. to use stow to create these symlinks all you need to do is
 ```bash
