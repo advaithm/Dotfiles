@@ -107,6 +107,7 @@ alias kate='kstart5 kate'
 stfu () {
 	"$@" &> /dev/null < /dev/null
 }
+alias code = "codium"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
