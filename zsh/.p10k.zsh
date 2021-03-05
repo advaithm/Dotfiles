@@ -28,6 +28,7 @@
 
   # Zsh >= 5.1 is required.
   autoload -Uz is-at-least && is-at-least 5.1 || return
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(

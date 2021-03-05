@@ -4,9 +4,9 @@ if &compatible
 endif
 function! s:packager_init(packager) abort
   " plugin manager
-  call a:packager.add('kristijanhusak/vim-packager', {'type':'opt'})
+  call a:packager.add('kristijanhusak/vim-packager',{'type':'opt'})
   " theme
-  call a:packager.add('kaicataldo/material.vim', { 'branch': 'main' })
+  call a:packager.add('Matt-Gleich/monovibrant', { 'branch': 'main' })
   " linter
   call a:packager.add('vim-syntastic/syntastic')
   " nerd tree file explorer
@@ -45,10 +45,4 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
-let g:material_theme_style = 'darker'
-let g:material_terminal_italics = 1
-colorscheme material 
-
-"start nerd tree drop cursor in other window
-autocmd VimEnter * NERDTree | wincmd p
+colorscheme monovibrant
