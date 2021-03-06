@@ -46,3 +46,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 colorscheme monovibrant
+
+"start nerd tree drop cursor in other window
+autocmd VimEnter * NERDTree | wincmd p

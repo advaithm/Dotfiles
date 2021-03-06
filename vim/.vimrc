@@ -11,8 +11,15 @@ function! s:packager_init(packager) abort
   call a:packager.add('vim-syntastic/syntastic')
   " nerd tree file explorer
   call a:packager.add('preservim/nerdtree')
+  "async linter 
+  call a:packager.add('dense-analysis/ale')
   " black formater
   call a:packager.add('psf/black', { 'branch': 'stable','type':'opt' })
+  " fzf search
+  call a:packager.add('junegunn/fzf',{ 'do': { -> fzf#install() } })
+  call a:packager.add('junegunn/fzf.vim')
+  " tag bar, lsp
+  call a:packager.add('liuchengxu/vista.vim')
 endfunction
 
 packadd vim-packager
@@ -45,10 +52,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" ale
+let g:ale_linters = {
+      \   'python': ['mypy']}
 
 let g:material_theme_style = 'darker'
 let g:material_terminal_italics = 1
 colorscheme material 
+
+nnoremap <space> za
 
 "start nerd tree drop cursor in other window
 autocmd VimEnter * NERDTree | wincmd p
