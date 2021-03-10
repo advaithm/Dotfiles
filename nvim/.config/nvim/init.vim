@@ -15,6 +15,7 @@ function! s:packager_init(packager) abort
   call a:packager.add('psf/black', { 'branch': 'stable','type':'opt' })
   "cmake linting
   call a:packager.add('pboettch/vim-cmake-syntax',{'type':'opt'})
+  call a:packager.add('dense-analysis/ale')
   " air line
   call a:packager.add('vim-airline/vim-airline')
   " air line themes
@@ -47,6 +48,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:ale_linters = {'python': ['mypy'] }
+let g:ale_completion_autoimport = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -58,6 +61,6 @@ let g:airline_powerline_fonts = 1
 set showmatch
 colorscheme monovibrant
 " show hiddden files nerdtree
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
 "start nerd tree drop cursor in other window
 autocmd VimEnter * NERDTree | wincmd p

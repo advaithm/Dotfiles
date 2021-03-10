@@ -20,6 +20,10 @@ function! s:packager_init(packager) abort
   call a:packager.add('junegunn/fzf.vim')
   " tag bar, lsp
   call a:packager.add('liuchengxu/vista.vim')
+  " airline
+  call a:packager.add('vim-airline/vim-airline')
+  " air line themes
+  call a:packager.add('vim-airline/vim-airline-themes',)
 endfunction
 
 packadd vim-packager
@@ -52,15 +56,20 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:airline_powerline_fonts = 1
+let g:airline_theme = ''
+
 " ale
 let g:ale_linters = {
       \   'python': ['mypy']}
+
 
 let g:material_theme_style = 'darker'
 let g:material_terminal_italics = 1
 colorscheme material 
 
 nnoremap <space> za
+let g:airline_theme = 'base16-spacemacs'
 
 "start nerd tree drop cursor in other window
 autocmd VimEnter * NERDTree | wincmd p
