@@ -13,6 +13,12 @@ function! s:packager_init(packager) abort
   call a:packager.add('preservim/nerdtree')
   " black formater
   call a:packager.add('psf/black', { 'branch': 'stable','type':'opt' })
+  "cmake linting
+  call a:packager.add('pboettch/vim-cmake-syntax',{'type':'opt'})
+  " air line
+  call a:packager.add('vim-airline/vim-airline')
+  " air line themes
+  call a:packager.add('vim-airline/vim-airline-themes',)
 endfunction
 
 packadd vim-packager
@@ -45,7 +51,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+set showmatch
 colorscheme monovibrant
-
+" show hiddden files nerdtree
+let NERDTreeShowHidden=1
 "start nerd tree drop cursor in other window
 autocmd VimEnter * NERDTree | wincmd p
