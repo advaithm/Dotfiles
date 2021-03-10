@@ -51,6 +51,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:airline_theme = 'base16color'
+let g:airline_powerline_fonts = 1
+
 set showmatch
 colorscheme monovibrant
 " show hiddden files nerdtree
