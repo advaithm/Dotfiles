@@ -38,6 +38,7 @@ augroup packager_filetype
   autocmd!
   " load black for python files
   autocmd FileType python packadd black
+  autocmd FileType cmake packadd 'vim-cmake-syntax' 
 augroup END
 
 syntax on
