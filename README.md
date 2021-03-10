@@ -1,5 +1,5 @@
 # Nullrequest's dotfiles
-This a little repo I made to store my dotfiles. this is can be used alone or with my [auto-init](https://github.com/advaithm/auto_init) script, The auto-init script setups my development environment on Kde Plasma. The script installs my favorite theme, sets my wallpaper and my uses stow to set up my dotfiles. You will need to following installed to allow you to use all the dotfiles here.
+This a little repo I made to store my dotfiles. this is can be used alone or with my [auto-init](https://github.com/advaithm/auto_init) script, The auto-init script setups my development environment on Kde Plasma. The script installs my favorite theme, sets my [wallpaper](https://twitter.com/KleinesGluck/status/1336052912594722816) and my uses stow to set up my dotfiles. You will need to following installed to allow you to use all the dotfiles here.
 ```
 vim
 neovim
