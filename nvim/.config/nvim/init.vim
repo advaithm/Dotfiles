@@ -15,11 +15,14 @@ function! s:packager_init(packager) abort
   call a:packager.add('psf/black', { 'branch': 'stable','type':'opt' })
   "cmake linting
   call a:packager.add('pboettch/vim-cmake-syntax',{'type':'opt'})
-  call a:packager.add('dense-analysis/ale')
+  " html
+  call a:packager.add('othree/html5.vim',{'type':'opt'})
   " air line
   call a:packager.add('vim-airline/vim-airline')
   " air line themes
-  call a:packager.add('vim-airline/vim-airline-themes',)
+  call a:packager.add('vim-airline/vim-airline-themes')
+  "markdown
+  call a:packager.add('iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  })
 endfunction
 
 packadd vim-packager
@@ -39,22 +42,29 @@ augroup packager_filetype
   autocmd!
   " load black for python files
   autocmd FileType python packadd black
-  autocmd FileType cmake packadd 'vim-cmake-syntax' 
+  autocmd FileType cmake packadd 'vim-cmake-syntax'
+  autocmd FileType html packadd 'html5.vim'
+  autocmd FileType markdown packadd 'vim-markdown'
 augroup END
-
+map <C-p> <Plug>MarkdownPreviewToggle
 syntax on
-" syntastic stuff
+" syntastic status line
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:ale_linters = {'python': ['mypy'] }
-let g:ale_completion_autoimport = 1
+" syntastic configs
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers=['mypy','python']
+"markdown preview
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
+let g:mkdp_browser = 'firefox'
+let g:mkdp_filetypes = ['markdown']
+" airline
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16color'
 let g:airline_powerline_fonts = 1
 
