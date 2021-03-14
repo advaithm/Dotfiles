@@ -17,11 +17,12 @@ git clone https://github.com/kristijanhusak/vim-packager ~/.config/nvim/pack/pac
 ```
 If you used the auto-init script I created you only need to do the following step. Then finally in vim and nvim run `PackagerInstall` or `PackagerUpdate` on first run to sync all the dependencies required. I've taken some screen shots of how everything looks once installed.
 
+where did the vscode/vscodium dotfiles go!!, well I've been working on moving to other texteditors due to the anti-user practices Microsoft has been pulling with plugins like Pylance. I removed it for those reasons. I also accidently commited some tokens in the settings.json so I purged it from the repo. I am not really interested in publishing a version that fixes this.
+
+
 - [Neovim](https://neovim.io/) 
 ![neovim](.github/neovim.png)
 - [vim](https://www.vim.org/)
 ![vim](.github/vim.png)
-- [vscodium](https://vscodium.com/)
-![vscodium](.github/vscodium.png)
 - [neofetch](https://github.com/dylanaraps/neofetch)+[zsh](https://www.zsh.org/)
 ![neofetch+zsh](.github/zsh+neofetch.png)
