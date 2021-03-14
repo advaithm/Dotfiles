@@ -44,7 +44,6 @@ augroup packager_filetype
   autocmd FileType python packadd black
   autocmd FileType cmake packadd 'vim-cmake-syntax'
   autocmd FileType html packadd 'html5.vim'
-  autocmd FileType markdown packadd 'vim-markdown'
 augroup END
 map <C-p> <Plug>MarkdownPreviewToggle
 syntax on
