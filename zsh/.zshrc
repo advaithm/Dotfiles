@@ -81,10 +81,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
-
+export GPG_TTY=$(tty) # hack to fix gpg issues
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
+export VISUAL=nvim
+export EDITOR=nvim
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -121,7 +122,10 @@ function start_agent {
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add;
 }
-
+function conv_pdf {
+		pandoc $1 -o $2 
+ }
+eval $(thefuck --alias)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

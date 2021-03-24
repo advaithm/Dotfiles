@@ -45,7 +45,7 @@ augroup packager_filetype
   autocmd FileType cmake packadd 'vim-cmake-syntax'
   autocmd FileType html packadd 'html5.vim'
 augroup END
-map <C-p> <Plug>MarkdownPreviewToggle
+map <C-A-p> <Plug>MarkdownPreviewToggle
 syntax on
 " syntastic status line
 set statusline+=%#warningmsg#
