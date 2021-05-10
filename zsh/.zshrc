@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
-export GPG_TTY=$(tty) # hack to fix gpg issues
+# export GPG_TTY=$(tty) # hack to fix gpg issues
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 export VISUAL=nvim

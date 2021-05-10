@@ -23,6 +23,13 @@ function! s:packager_init(packager) abort
   call a:packager.add('vim-airline/vim-airline-themes')
   "markdown
   call a:packager.add('iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  })
+  "python completions
+  call a:packager.add('ncm2/ncm2')
+  call a:packager.add('roxma/nvim-yarp')
+  call a:packager.add('ncm2/ncm2-bufword')
+  call a:packager.add('ncm2/ncm2-path')
+  "jedi-vm
+  call a:packager.add('davidhalter/jedi-vim')
 endfunction
 
 packadd vim-packager
@@ -41,11 +48,12 @@ endif
 augroup packager_filetype
   autocmd!
   " load black for python files
-  autocmd FileType python packadd black
+  autocmd FileType python packadd black nmc2 'nvim-yarp'
   autocmd FileType cmake packadd 'vim-cmake-syntax'
   autocmd FileType html packadd 'html5.vim'
 augroup END
 map <C-A-p> <Plug>MarkdownPreviewToggle
+
 syntax on
 " syntastic status line
 set statusline+=%#warningmsg#
@@ -60,12 +68,24 @@ let g:syntastic_python_checkers=['mypy','python']
 "markdown preview
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
-let g:mkdp_browser = 'firefox'
+let g:mkdp_browser = 'vivaldi-stable'
 let g:mkdp_filetypes = ['markdown']
 " airline
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16color'
 let g:airline_powerline_fonts = 1
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+"jed-vim
+let g:jedi#auto_initialization = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#show_call_signatures = "2"
+
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 
 set showmatch
 colorscheme monovibrant
