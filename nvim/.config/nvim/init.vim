@@ -68,11 +68,11 @@ let g:syntastic_python_checkers=['mypy','python']
 "markdown preview
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
-let g:mkdp_browser = 'vivaldi-stable'
+let g:mkdp_browser = 'firefox'
 let g:mkdp_filetypes = ['markdown']
 " airline
-" let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'base16color'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
 
 " enable ncm2 for all buffers
